@@ -1,0 +1,63 @@
+<app-view>
+    <div class="main-page">
+        <div class="filters">
+            <!-- <div class="filters__first">
+                <button class="filters__add-note">+</button>
+            </div> -->
+            <form [formGroup]="createNewItemForm">
+                <div class="text-field">
+                    <label class="text-field__label" for="title">Введите название заголовка</label>
+                    <input 
+                        class="text-field__input" 
+                        type="text" 
+                        name="title" 
+                        id="title" 
+                        placeholder="Название" 
+                        formControlName="title"
+                    >
+                </div>
+                <div class="text-field">
+                    <label class="text-field__label" for="description">Введите описание</label>
+                    <input 
+                        class="text-field__input" 
+                        type="text" 
+                        name="description" 
+                        id="description" 
+                        placeholder="Описание" 
+                        formControlName="description"
+                    /> 
+                </div>
+                <form [formGroup]="selectCategoriesForm">
+                    <label for="">Выберите категорию</label>
+                    <!-- [(ngModel)]="selectedOption" -->
+                    <select 
+                        formControlName="category"
+                    >
+                        <option 
+                            *ngFor="let category of categories"
+                            [value]="category" 
+                        >
+                            {{category}}
+                        </option>
+                    </select>
+                </form>
+                
+                <button class="add-note" (click)="addNote()">Добавить новую запись</button>
+            </form>
+            <!-- array for sort -->
+            <div class="filters__buttons">
+                <button 
+                    class="filters__sort-btn"
+                    *ngFor="let category of categories; let i = index"
+                    [ngClass]="{filters__shop: i == 0, filters__bus: i == 1, filters__other: i == 2}"
+                    (click)="getDataSelect(category)"
+                >
+                    {{category}}
+                </button>
+            </div>
+        </div>
+        <div *ngIf="buttonItems">
+            <app-cards-list-item [buttonItems]="buttonItems"></app-cards-list-item>
+        </div>
+    </div>
+</app-view>
