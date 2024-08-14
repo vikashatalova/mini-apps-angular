@@ -10,6 +10,8 @@ import { ShellModule } from './core/components/shell/shell.module';
 import { ViewModule } from './core/components/view/view.module';
 import { FavoriteViewModule } from './views/favorite-view/favorite-view.module';
 import { CardsListItemModule } from './core/components/cards-list-item/cards-list-item.module';
+import { ColorChromeModule } from 'ngx-color/chrome';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,11 +22,10 @@ import { CardsListItemModule } from './core/components/cards-list-item/cards-lis
     AppRoutingModule,
     HomeViewModule,
     DeletedViewModule,
-    CommonModule,
     ShellModule,
     ViewModule,
     FavoriteViewModule,
-    CardsListItemModule
+    CardsListItemModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

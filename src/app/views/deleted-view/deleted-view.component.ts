@@ -4,7 +4,8 @@ interface DeletedButtonItems {
     id: string,
     title: string | null,
     description: string | null,
-    category: string | null
+    category: string | null,
+    color: string | null
 }
 
 @Component({
@@ -27,8 +28,8 @@ export class DeletedViewComponent implements OnInit {
         if (storedData) {
             this.deletedButtonItems = JSON.parse(storedData);
         } else {
-            this.deletedButtonItems = [];
+            // this.deletedButtonItems = [];
+            console.log('this.deletedButtonItems = []');
         }
-        console.log('deletedButtonItems', this.deletedButtonItems);
     }
 }

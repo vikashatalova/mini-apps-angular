@@ -4,7 +4,8 @@ interface FavoriteButtonItems {
     id: string,
     title: string | null,
     description: string | null,
-    category: string | null
+    category: string | null,
+    color: string | null
 }
 
 @Component({
@@ -29,6 +30,5 @@ export class FavoriteViewComponent implements OnInit {
         } else {
             this.favoriteButtonItems = [];
         }
-        console.log('favoriteButtonItems', this.favoriteButtonItems);
     }
 }
